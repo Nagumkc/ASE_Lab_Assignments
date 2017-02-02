@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <style>
+        .group {
+
+    height: 200px;
+    width: 400px;
+            position: fixed;
+    top: 50%;
+            left: 53%;
+    margin-top: -100px;
+    margin-left: -200px;
+    }
+
+        body
+        {
+            background: url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg') fixed;
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+
+
+        }
+
+        .profile-img-card {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 5px;
+            display: block;
+
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 30%
+        }
+.st{
+
+            width: 100px;
+           height:30px;
+    background-color:mediumseagreen;
+    border: 5px mediumseagreen ;
+    margin: auto;
+    border-radius: 10px;
+}
+        .re
+        {
+            width: 100px;
+            height:30px;
+            background-color:cornflowerblue;
+            border: 5px darkgreen;
+            margin: auto;
+            border-radius: 10PX;
+        }
+
+        </style>
+</head>
+<body>
+</br></br></br></br></br>
+
+<img id="profile-img" class="profile-img-card" src="../hi.png" />
+<div class="group">
+
+    <label style="color:white;font-size: larger">Username:</label>
+    <input type="text" id="usr" placeholder="username"  style="border-radius: 10px;height: 20px;font-size: 12px"></br></br>
+<label style="color:white;font-size: larger">Password: </label>
+    <span style="margin-left: .2em;">
+    <input type="password" id="pwd" placeholder="password" style="border-radius: 10px;height: 20px;font-size: 12px">
+    </span>
+    </br>
+    </br>
+    <span style="margin-left: 2em;">
+    <button type="button" onclick="validate()" class="st">Login </button>
+    </span>
+    <span style="margin-left: 4em;">
+        <button type="button" onclick="register()" class="re">Signup </button>
+    </span>
+    </br>
+
+    <h2 style="color: red;" id="failed"> </h2>
+
+</div>
+<script src="../Javascript/app.js"></script>
+</body>
+</html>
