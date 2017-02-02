@@ -47,7 +47,8 @@ body{
 <div id="mp" style="width:950px;height:450px;background:transparent;float: left;" class="b" >
 </div>
 
-<div class="weather" style="margin-left: 1000px;height: 50px" >
+<div class="weather" style="margin-left: 1000px;height: 100px" >
+<h2 style="color: burlywood">Weather Report:</h2>
     <h3 id="city" ></h3>
     <h3 id="tem"></h3>
 </div></br></br>
@@ -98,8 +99,8 @@ function directions() {
 
     wea.send(null);
     var r =JSON.parse(wea.response);
-    var dis ="Start location:"+r.current_observation.display_location.full+"</br>";
-    var temp ="Current_temp:"+r.current_observation.temperature_string + "</br>";
+    var dis ="Start location:"+r.current_observation.display_location.full;
+    var temp ="Current_temp:"+r.current_observation.temperature_string;
     document.getElementById("city").innerHTML =dis;
     document.getElementById("tem").innerHTML =temp;
 
@@ -113,8 +114,8 @@ function directions() {
 
     weat.send(null);
     var re =JSON.parse(weat.response);
-    var loc ="Destination location:"+re.current_observation.display_location.full+"</br>";
-    var tem ="Current_temp:"+re.current_observation.temperature_string + "</br>";
+    var loc ="Destination location:"+re.current_observation.display_location.full;
+    var tem ="Current_temp:"+re.current_observation.temperature_string;
     document.getElementById("city2").innerHTML =loc;
     document.getElementById("temp1").innerHTML =tem;
 }
