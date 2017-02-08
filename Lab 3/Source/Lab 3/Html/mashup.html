@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mashup">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Client Mashup</title>
+<style>
+    body
+    {
+        background: url('../home.jpg');
+    }
+    .in{
+    width: 419px;
+    background: white;
+    border: 2px solid #1ab188;
+    border-radius: 4px;
+    color: #5e5e5e;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px;
+    margin-top: 10px;}
+    .bt{
+        width: 419px;
+        height:40px;
+        background:cornflowerblue;
+        border:  2px solid #ffffff;
+        cursor: pointer;
+        border-radius: 4px;
+        color: black;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 6px;
+        margin-top: 10px;
+    }
+Td{
+    color: white;
+}
+    a{
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div ng-controller="mycont">
+    <h1 align="absolute" style="text-align: center; color:#4CAF50">Search your query!</h1>
+    <input type="text" style="margin-left:200px" ng-model="input" placeholder="Knowledge search" class="in"/>
+    <button type="submit" ng-click="fuck()" class="bt">Search</button>
+    <p id="out"></p>
+<div id="se" style="display:none">
+    <p ng-model="final">
+    <TABLE BORDER=2 CELLPADDING=4> <TR> <TH style="color: aliceblue; background:sienna" COLSPAN=2>Search From Using Google knowledge Graph API </TH> </TR>
+        <TR> <TD>Search Name</TD> <TD>{{final.name}}</TD> </TR>
+        <TR> <TD>Description</TD> <TD>{{final.disc}}</TD> </TR>
+        <TR> <TD>Wiki Image</TD> <TD><a href={{final.link}}>Wiki Image </a> </TD> </TR>
+    <TR> <TD>Detailed Description</TD> <TD>{{final.detailed}}</TD> </TR>
+    <TR><Td>Wiki Page</Td> <td><a href="{{final.wiki}}">Wiki Page </a> </td></TR>
+    <TR> <TD>Website</TD> <TD>{{final.web}}</TD> </TR>
+</TABLE>
+    <button type="submit" style="margin-left: 400px" ng-click="translate(final.detailed)" class="bt">Language Translate</button>
+<h3 style="text-align: center;background-color: #fefefe" id="lg"></h3>
+    <P id="trans" style="background-color: #fefefe">
+    </P>
+    <input ng-click="voice(final.detailed)" style="margin-left: 400px"  type='button' value='🔊 Play' class="bt" />
+    <button type="submit" style="margin-left: 400px" ng-click="sentiment(final.detailed)" class="bt">Sentiment Analysis</button>
+
+    </p>
+
+</div>
+    <div style="display:none;margin-left: 470px" id="dis">
+    <p ng-model="sent" >
+    <TABLE BORDER=2 CELLPADDING=4> <TR> <TH style="color: aliceblue; background:sienna" COLSPAN=2>Sentiment From Using Alchemy API </TH> </TR>
+        <TR> <TD>Sentiment score</TD> <TD>{{sent.score}}</TD> </TR>
+        <TR> <TD>Sentiment type</TD> <TD>{{sent.type}}</TD> </TR>
+    </TABLE>
+    </p>
+        </div>
+</div>
+<script src="../JS/app.js"></script>
+<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+</body>
+</html>

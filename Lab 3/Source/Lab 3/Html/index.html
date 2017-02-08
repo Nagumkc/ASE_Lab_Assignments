@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Oath</title>
+    <style>
+        body {
+            background: url('../sign1.jpg');
+        }
+        .in
+        {
+            padding: 10px;
+            font-size: medium;
+            font-family:'Open Sans' , sans-serif;
+            text-align:start;
+            border: none;
+            border-bottom: solid 2px darkgray;
+            outline: 0px;
+            font-style: italic;
+        }
+        .form-title{
+            font-size: larger;
+        }
+        .btn{
+            border: none;
+            text-align: center;
+            padding: 15px 40px;
+            width:120px;
+            outline: 0px;
+            background-color: #4CAF50;
+            color: white;
+            margin-left: 40px;
+        }
+
+    </style>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="707975403762-t2b0lr1og3aje5ovrvri88ertn7khruk.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+<div class="login" ng-controller="mycontroller" style="margin-left: 630px;margin-top: 200px;">
+    <p class="form-title" style="margin-left: 75px">SIGN IN</p>
+    <input type="text" placeholder="Username" class="in" id="user"/></br>
+    <input type="password" placeholder="Password" class="in" id="pass" /></br></br>
+    <input type="submit" value="Sign In" class="btn" onclick="get()"></br>
+    <label style="margin-left: 88px;">Or</label>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="margin-left: 40px" ></div>
+    <label style="margin-left: 88px">Or</label>
+   <div style="margin-left: 60px"> <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button></div>
+</div>
+<script src="../JS/app.js"></script>
+<script>
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI();
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into Facebook.';
+        }
+    }
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '266694200419643',
+            cookie     : false,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.8' // use graph api version 2.8
+        });
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML =
+                'Thanks for logging in, ' + response.name + '!';
+        });
+    }
+function get() {
+    localStorage.setItem("username","nagumkc");
+    localStorage.setItem("password","nag143@9");
+    if(document.getElementById("user").value ==="" |document.getElementById("pass").value ==="" )
+    {
+        alert("Please enter all your details!");
+    }
+    else {
+        if (localStorage.getItem("username") === document.getElementById("user").value & document.getElementById("user").value !== " ") {
+
+            if (localStorage.getItem("password") === document.getElementById("pass").value) {
+
+                window.location = "mashup.html";
+            }
+            else {
+                alert("Please enter correct details");
+            }
+        }
+        else {
+            alert("Please enter correct details!");
+        }
+    }
+}
+</script>
+</body>
+</html>
