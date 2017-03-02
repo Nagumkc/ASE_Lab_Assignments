@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.venkatnag.mysmartwatch.StartActivity"
+    tools:deviceIds="wear_round"
+    android:background="@drawable/we">
+
+    <TextView
+        android:text="Weather Report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:hint="Enter City"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/white" />
+
+    <Button
+        android:text="Show Weather"
+        android:layout_width="wrap_content"
+        android:id="@+id/button2"
+        android:layout_below="@+id/editText"
+        android:layout_marginRight="30dp"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginLeft="30dp"
+        android:height="10dp"
+        android:layout_height="wrap_content"
+        android:onClick="weather" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:width="150dp"
+        android:height="30dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
