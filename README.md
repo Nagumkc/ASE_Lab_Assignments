@@ -16,3 +16,6 @@ Lab6 Assignment https://github.com/Nagumkc/ASE_Lab_Assignments/wiki/Tutorial-6
 
 Lab7 Assignment https://github.com/Nagumkc/ASE_Lab_Assignments/wiki/Tutorial-7
 
+Lab8 Assignment https://github.com/Nagumkc/ASE_Lab_Assignments/wiki/Tutorial-8
+
+
