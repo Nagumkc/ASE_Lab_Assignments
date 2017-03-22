@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+    <style>
+        body{
+            background: url("st.jpg");
+        }
+    </style>
+</head>
+<body ng-app="ap">
+<div ng-controller="con" style="margin-left: 750px;margin-top: 100px">
+<input type="text" style="border-radius:20px;padding: 4px;border: 10px;height: 20px " ng-model="in"/>
+    <Button ng-click="search()" style="background-color: cornflowerblue;border-radius: 20px;padding: 4px;border: 10px;width: 70px;height: 25px">Search</Button></br>
+    <div id="col" style="display: none">
+    <p ng-model="final">
+        <table BORDER=2 CELLPADDING=6>
+        <TR><TH style="color:black; background:cornflowerblue" COLSPAN=2>Private service API</TH></TR>
+        <TR><td><img src="{{final.image}}"></img></td></TR>
+
+
+        <table BORDER=2 CELLPADDING=6>
+        <TR><TD style="color: white;width: 110px;font-size: larger;background-color: grey">Calories</TD><TD style="color: white;width: 115px;font-size: larger;text-align: center">{{final.score}}</TD></TR>
+        <TR><TD style="color: white;width: 110px;font-size: larger;background-color: gray">Quantity</TD><TD style="color: white;width: 115px;font-size: larger;text-align: center">{{final.qt}}</TD></TR></table>
+
+        </table >
+        </p>
+        </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
